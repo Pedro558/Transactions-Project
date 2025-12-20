@@ -1,7 +1,30 @@
 # Variables
 @baseUrl = http://localhost:3333
+@transactionId = d457c15a-1404-41fd-b9ae-0ed6f88f2f47
 
 ###
 
-# Health Check
-GET {{baseUrl}}/health
+# GET Transactions
+GET {{baseUrl}}/transactions
+
+###
+
+# GET Transaction/id
+GET {{baseUrl}}/transactions/{{transactionId}}
+
+###
+
+# GET Summary
+GET {{baseUrl}}/transactions/summary
+
+###
+
+# Create Transaction
+POST {{baseUrl}}/transactions
+Content-Type: application/json
+
+{
+  "title": "Betano",
+  "amount": 200,
+  "type": "credit"
+}
